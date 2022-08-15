@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xxl-12 d-flex justify-content-center text-white">
+            <h1>Reviews for {{ rest }}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xxl-12 d-flex justify-content-center">
+            <img [src]="src" class="img-fluid" alt="restaraunt photo">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xxl-12 d-flex justify-content-center">
+            <mat-list>
+                <mat-list-item>- This is the favorite lunch spot for my office. The food and service are outstanding.</mat-list-item>
+                <mat-list-item>- Great bar, great staff, good food. It's a neighborhood tavern, so set your expectations accordingly. </mat-list-item>
+                <mat-list-item>- Came here a few times the staff is amazing and I get a very warm welcoming feeling. </mat-list-item>
+                <mat-list-item *ngIf="newReview">{{ "- "+ newReview }}</mat-list-item>
+            </mat-list>
+        </div>
+    </div>
+    <div class="row">
+        <div class="row justify-content-center">
+            <div class="col-xxl-6 d-flex justify-content-center">
+                <mat-form-field class="example-full-width text-white" appearance="fill">
+                    <mat-label>Leave a review</mat-label>
+                    <textarea matInput id="review"></textarea>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xxl-12 d-flex justify-content-center">
+                <button mat-raised-button color="primary" (click)="addReview()">Submit Review</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
