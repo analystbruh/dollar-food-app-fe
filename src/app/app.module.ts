@@ -15,6 +15,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
+import { HttpClientModule } from '@angular/common/http';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
     MatListModule,
     MatIconModule,
     MatInputModule,
-    SocialLoginModule
+    SocialLoginModule,
+    HttpClientModule,
+    MatDividerModule,
+    MatSelectModule
   ],
   providers: [ReviewsService,{
     provide: 'SocialAuthServiceConfig',
