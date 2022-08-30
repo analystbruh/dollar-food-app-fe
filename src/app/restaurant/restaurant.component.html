@@ -1,0 +1,32 @@
+<div>
+    <h1>  </h1>
+
+    <!-- ngx-scanner-qrcode -->
+    <ngx-scanner-qrcode #action="scanner" (data)="output = $event" (error)="onError($event)"></ngx-scanner-qrcode>
+
+    <!-- data  -->
+    <p class="data">{{ output }}</p>
+
+    <!-- Loading -->
+    <!-- <p *ngIf="action.isLoading">Camera Starting</p> -->
+
+    <!-- toggleCamera -->
+    <button class="scan" mat-raised-button color="primary" (click)="action.toggleCamera()" [disabled]="action.isLoading">
+        Scan QR Code
+    </button>
+
+    <br><br>
+
+    <button mat-raised-button (click)="leaveReview('medlock tavern')">Leave a Review</button>
+
+    <br><br>
+
+    <!-- go to search that can use location -->
+    <a routerLink="/loc">
+        <button mat-raised-button>
+            Find Restaurant
+        </button>
+    </a>
+
+    <!-- <h5>Author: DaiDH</h5> -->
+</div>

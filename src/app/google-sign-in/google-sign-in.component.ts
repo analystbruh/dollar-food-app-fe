@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SocialAuthService, SocialUser } from '@abacritt/angularx-social-login';
-import { FacebookLoginProvider, GoogleLoginProvider } from '@abacritt/angularx-social-login';
+import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
 import { Router } from '@angular/router';
 import { ReviewsService } from '../services/reviews.service';
 
@@ -25,7 +25,7 @@ export class GoogleSignInComponent implements OnInit {
       this.user = user;
       this.revs.user = user;
       this.loggedIn = (user != null);
-      this.router.navigate(['loc']);
+      this.router.navigate(['restaurant']);
     });
   }
 

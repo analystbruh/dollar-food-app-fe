@@ -17,11 +17,11 @@ export class ReviewsService {
   getReviews(restaurant: string): Observable<object> {
     let params = { restaurant };
     // return this.http.get('http://localhost:5000/api/v1/reviews', { params });
-    return this.http.get('https://dollar-app-api.herokuapp.com//api/v1/reviews', { params });
+    return this.http.get('https://dollar-app-api.herokuapp.com/api/v1/reviews', { params });
   }
 
   postReviews(body: object): Observable<object> {
     // return this.http.post('http://localhost:5000/api/v1/reviews', body);
-    return this.http.post('https://dollar-app-api.herokuapp.com//api/v1/reviews', body);
+    return this.http.post('https://dollar-app-api.herokuapp.com/api/v1/reviews', body);
   }
 }

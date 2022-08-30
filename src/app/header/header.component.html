@@ -1,0 +1,21 @@
+<mat-toolbar>
+    <a routerLink="">
+        <span>Dollar App&nbsp;&nbsp;</span>
+    </a>
+    <span class="spacer"></span>
+    <a routerLink="/restaurant">
+        <button mat-raised-button aria-label="Example icon-button with heart icon">
+            <mat-icon>restaurant</mat-icon>&nbsp;Restaurant
+        </button>
+    </a>
+    &nbsp;&nbsp;
+    <a routerLink="/account">
+        <button
+            mat-raised-button matBadge="!"
+            matBadgeSize="small"
+            [matBadgeHidden]="balanceAlert$ | async"
+            aria-label="Example icon-button with share icon">
+            <mat-icon>account_circle</mat-icon>&nbsp;Account
+        </button>
+    </a>
+</mat-toolbar>

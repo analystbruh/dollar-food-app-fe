@@ -10,16 +10,15 @@
         </div>
     </div>
     <br><br>
-    <div class="row justify-content-center">
+    <!-- <div class="row justify-content-center">
         <div class="col-lg-4">
             <mat-divider></mat-divider>
         </div>
-    </div>
+    </div> -->
     <div id="reviews">
         <div class="row mt-3 justify-content-center" *ngFor="let review of reviews$ | async;">
             <div class="col-lg-4 text-white">
-                <div>
-                    <p>{{ review.review }}</p>
+                <mat-card>
                     <mat-icon class="text-primary">person_outline_icon</mat-icon>
                     <span>{{ review.username }} - </span>
                     <!-- stars begin-->
@@ -36,15 +35,15 @@
                         <mat-icon *ngIf="!(review.stars>4)">star_border_icon</mat-icon>
                     </div>
                     <!-- stars end -->
-                    <br><br>
-                    <mat-divider></mat-divider>
-                </div>
+                    <p>{{ review.review }}</p>
+                </mat-card>
+                <br>
+                <mat-divider></mat-divider>
             </div>
         </div>
         <div class="row mt-3 justify-content-center" *ngFor="let submittedReview of submittedReviews;">
             <div class="col-lg-4 text-white">
-                <div>
-                    <p>{{ submittedReview.review }}</p>
+                <mat-card>
                     <mat-icon class="text-primary">person_outline_icon</mat-icon>
                     <span>{{ submittedReview.username }} - </span>
                     <!-- stars begin-->
@@ -61,9 +60,10 @@
                         <mat-icon *ngIf="!(submittedReview.rating>4)">star_border_icon</mat-icon>
                     </div>
                     <!-- stars end -->
-                    <br><br>
-                    <mat-divider></mat-divider>
-                </div>
+                    <p>{{ submittedReview.review }}</p>
+                </mat-card>
+                <br>
+                <mat-divider></mat-divider>
             </div>
         </div>
     </div>
@@ -92,7 +92,7 @@
     </div>
     <div class="row mt-3 justify-content-center">
         <div class="col-xxl-12 mb-4 d-flex justify-content-center">
-            <button mat-raised-button color="primary" (click)="addReview()">Submit Review</button>
+            <button mat-raised-button color="primary" (click)="submitReview()">Submit Review</button>
         </div>
     </div>
 </div>

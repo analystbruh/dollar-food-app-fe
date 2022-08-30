@@ -1,0 +1,16 @@
+<div style="width:100%;" class="d-flex justify-content-center mt-3">
+    <button mat-raised-button color="primary" (click)="showReward()">Show Rewards</button>
+</div>
+
+<div class="container mt-3"  *ngIf="showRewards">
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <h2 class="text-white">$1 Medlock Tavern</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <img class="img-fluid" src="assets/medlockMock.PNG">
+        </div>
+    </div>
+</div>

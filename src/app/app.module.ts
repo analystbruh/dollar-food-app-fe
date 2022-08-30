@@ -18,6 +18,14 @@ import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSelectModule } from '@angular/material/select';
+import { HeaderComponent } from './header/header.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { RestaurantComponent } from './restaurant/restaurant.component';
+import { AccountComponent } from './account/account.component';
+import { NgxScannerQrcodeModule } from 'ngx-scanner-qrcode';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatCardModule } from '@angular/material/card'
+
 
 @NgModule({
   declarations: [
@@ -25,7 +33,10 @@ import { MatSelectModule } from '@angular/material/select';
     HomeComponent,
     GoogleSignInComponent,
     LocationComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    HeaderComponent,
+    RestaurantComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +49,11 @@ import { MatSelectModule } from '@angular/material/select';
     SocialLoginModule,
     HttpClientModule,
     MatDividerModule,
-    MatSelectModule
+    MatSelectModule,
+    MatToolbarModule,
+    NgxScannerQrcodeModule,
+    MatBadgeModule,
+    MatCardModule
   ],
   providers: [ReviewsService,{
     provide: 'SocialAuthServiceConfig',

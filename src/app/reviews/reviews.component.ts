@@ -1,7 +1,7 @@
 import { SocialUser } from '@abacritt/angularx-social-login';
-import { Component, NgIterable, OnInit } from '@angular/core';
-import { TitleStrategy } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { BalanceService } from '../services/balance.service';
 import { ReviewsService } from '../services/reviews.service';
 
 @Component({
@@ -23,7 +23,9 @@ export class ReviewsComponent implements OnInit {
   public src = 'assets/';
   public newReview: string | null = null;
 
-  constructor(private revs: ReviewsService) { }
+
+  constructor(private revs: ReviewsService,
+    private bs: BalanceService) { }
 
   ngOnInit(): void {
     this.rest = this.revs.restaraunt;
@@ -33,7 +35,7 @@ export class ReviewsComponent implements OnInit {
     console.log(this.rest, this.user);
   }
 
-  addReview()  {
+  submitReview()  {
     let input = document.querySelector('#review') as HTMLTextAreaElement;
     console.log(input.value);
     this.newReview = input.value;
@@ -45,12 +47,15 @@ export class ReviewsComponent implements OnInit {
       rating: this.rating ?? 0
     };
     console.log(data);
-    this.revs.postReviews(data).subscribe(() => this.showNewReview(data));
+    this.revs.postReviews(data).subscribe(() =>{
+      this.showNewReview(data);
+      this.bs.updateBalance('1',false);
+    });
     this.rating = null;
   }
 
   showNewReview(review: any) {
-    this.submittedReviews = [...this.submittedReviews, review];
+    this.submittedReviews = [...this.submittedReviews, review]
   }
 
 }
